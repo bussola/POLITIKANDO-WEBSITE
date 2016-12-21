@@ -44,10 +44,15 @@
 		}(document, 'script', 'facebook-jssdk'));
 		</script>
 		
+		<!-- Redirecionamento -->
 		<script>
-			FB.Event.subscribe('auth.login', function(response) {
-			alert("Logged in.. Redirecting you now...");
-			window.location = "proposicoes.html";});
+		  FB.init({
+			  appId: '685131871646050', cookie: true,
+			  status: true, xfbml: true
+		  });
+		  FB.Event.subscribe('auth.login', function () {
+			  window.location = "http://viniciusbussola.com.br/proposicoes.html";
+		  });
 		</script>
 
     <!-- Navigation -->
