@@ -42,6 +42,13 @@
 		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=685131871646050";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
+		
+		
+		FB.Event.subscribe('auth.login', function(response) {
+        alert("Logged in.. Redirecting you now...");
+        window.location = "proposicoes.html";
+		});
+	
 		</script>
 
     <!-- Navigation -->
@@ -63,7 +70,7 @@
                 		<!-- Botao Login -->
 						<!-- Botao original copiado do politikei: <a id = "botao-login" class="btn btn-success btn-lg" href="" ng-click="home.login_fb()" target="0"> -->
 						<!-- Botao bootstrat -->
-                		<!-- <a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()" target="0">
+                		<!--<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()" target="0">
                 			<i class="fb-login-button" ></i> ENTRAR <div class="ripple-wrapper"></div>
                 		</a> -->
 						
