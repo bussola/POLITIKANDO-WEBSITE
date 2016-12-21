@@ -33,6 +33,26 @@
 
 <body id="page-top" class="index">
 
+	<!-- Inicializacao e configuracao SDK API Facebook -->
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '685131871646050',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
@@ -51,7 +71,7 @@
                 	<div class="navbar-right">
                 		<!-- Botao Login -->
 						<!-- Botao original copiado do politikei: <a id = "botao-login" class="btn btn-success btn-lg" href="" ng-click="home.login_fb()" target="0"> -->
-                		<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()" target="_blank">
+                		<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()">
                 			<i class="fa fa-facebook-square"></i> ENTRAR<div class="ripple-wrapper"></div>
                 		</a>>
                 	<!-- Menu Padrao:
@@ -97,7 +117,7 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" style="background-color:#2C3E50;">
+    <section id="portfolio" style=background-image:url(img/abstract-blue.jpg) > <!-- style="background-color:#2C3E50;"--> 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -190,7 +210,7 @@
 				acreditamos que a transparência é uma das ferramentas mais poderosas para melhorar o Governo. 
 				E acima de tudo, acreditamos que se as pessoas tiverem as ferramentas certas, com um design amigável e informações claras, todos irão participar mais e cumprir com o seu papel na democracia.<br><br>
 
-				O Polikando-Itu foi inspirado no Politikei-Curitiba, e se trata de um site para ver as proposições na Câmara Municipal, posicionar-se à favor ou contra, 
+				O Polikando-Itu foi inspirado no Politikei-Curitiba, e se trata de um site para ver as proposições na Câmara Municipal, posicionar-se a favor ou contra, 
 				e analisar quais são os vereadores que pensam mais parecido com você. Estamos fazendo este projeto totalmente em código aberto para que ele seja replicado em todas as cidades do Brasil. <br><br>
 
 				Somos apartidários e não temos fins lucrativos, apenas acreditamos no que deveria ser óbvio: que a tecnologia pode ser a melhor amiga da democracia. Vote, utilize, 
@@ -225,15 +245,15 @@
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nome</label>
-                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Digite seu nome.">
+                                <p><label>Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome:       " id="name" required data-validation-required-message="Digite seu nome.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Digite seu endereço de email.">
+                                <p><label>Email</label>
+                                <input type="email" class="form-control" placeholder="Email:       " id="email" required data-validation-required-message="Digite seu endereço de email.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -246,8 +266,8 @@
                         </div> -->
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Mensagem</label>
-                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor entre com sua mensagem."></textarea>
+                                <p><label>Mensagem</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensagem:       " id="message" required data-validation-required-message="Por favor entre com sua mensagem."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
