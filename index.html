@@ -33,24 +33,41 @@
 
 <body id="page-top" class="index">
 
-	<!-- Inicializacao e configuracao SDK API Facebook -->
+	<!--Facebook API-->
 	<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '685131871646050',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
+        var toLoad = []
+        window.fbReady = function(func){
+            if( typeof func === 'function') {
+                if( window.FB ) {
+                    func.call(window)
+                } else {
+                    toLoad.push(func)
+                }
+            }
+        }
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId       : '685131871646050',
+                xfbml       : true,
+                version     : 'v2.7',
+                status      :true,
+                cookie      :true
+            });
+
+            // Execute all the fbAsyncInit functions
+            toLoad.forEach(function(func){
+                func.call(window)
+            })
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 </script>
 
     <!-- Navigation -->
@@ -71,9 +88,9 @@
                 	<div class="navbar-right">
                 		<!-- Botao Login -->
 						<!-- Botao original copiado do politikei: <a id = "botao-login" class="btn btn-success btn-lg" href="" ng-click="home.login_fb()" target="0"> -->
-                		<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()">
+                		<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()" target="0">
                 			<i class="fa fa-facebook-square"></i> ENTRAR<div class="ripple-wrapper"></div>
-                		</a>>
+                		</a>
                 	<!-- Menu Padrao:
                     <li class="hidden">
                         <a href="#page-top"></a>
