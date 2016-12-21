@@ -42,13 +42,12 @@
 		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=685131871646050";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
+		</script>
 		
-		
-		FB.Event.subscribe('auth.login', function(response) {
-        alert("Logged in.. Redirecting you now...");
-        window.location = "proposicoes.html";
-		});
-	
+		<script>
+			FB.Event.subscribe('auth.login', function(response) {
+			alert("Logged in.. Redirecting you now...");
+			window.location = "proposicoes.html";});
 		</script>
 
     <!-- Navigation -->
