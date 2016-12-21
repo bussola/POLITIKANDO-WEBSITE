@@ -42,19 +42,21 @@
 		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=685131871646050";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
+		
+		FB.Event.subscribe('auth.login', function(){
+			window.location.href = 'proposicoes.html';
+		});
+
+		// Load the SDK Asynchronously
+		(function(d){
+		   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		   if (d.getElementById(id)) {return;}
+		   js = d.createElement('script'); js.id = id; js.async = true;
+		   js.src = "js/all.js";
+		   ref.parentNode.insertBefore(js, ref);
+		 }(document));
 		</script>
 		
-		<!-- Redirecionamento -->
-		<script>
-		  FB.init({
-			  appId: '685131871646050', cookie: true,
-			  status: true, xfbml: true
-		  });
-		  FB.Event.subscribe('auth.login', function () {
-			  window.location.href = 'proposicoes.html';
-		  });
-		</script>
-
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
@@ -78,7 +80,7 @@
                 			<i class="fb-login-button" ></i> ENTRAR <div class="ripple-wrapper"></div>
                 		</a> -->
 						
-						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="window.location = '/proposicoes.html'"></div>
 						
 						<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">ENTRAR</fb:login-button> -->
 						
