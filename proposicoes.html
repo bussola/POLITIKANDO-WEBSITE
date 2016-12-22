@@ -52,7 +52,8 @@
 		});
 		
 		FB.logout(function(response) {
-		// user is now logged out
+			window.location.href = 'index.html';
+			// user is now logged out
 		});
 
 		// Load the SDK Asynchronously
@@ -89,7 +90,7 @@
                         <a href="#about">Ranking</a>
                     </li>
                     <li> <!--class="page-scroll"-->
-                        <!-- <a href="index.html" onclick="FB.logout">Desconectar</a>-->
+                        <a href="#" onclick="FB.logout();">Desconectar</a>
                     </li>
                 </ul>
             </div>
