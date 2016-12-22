@@ -50,6 +50,10 @@
 		FB.Event.subscribe('auth.logout', function(){
 			window.location.href = 'index.html';
 		});
+		
+		FB.logout(function(response) {
+		// user is now logged out
+		});
 
 		// Load the SDK Asynchronously
 		(function(d){
@@ -58,7 +62,7 @@
 		   js = d.createElement('script'); js.id = id; js.async = true;
 		   js.src = "js/all.js";
 		   ref.parentNode.insertBefore(js, ref);
-		 }(document));
+		 }(document)); 
 		</script>
 
     <!-- Navigation -->
@@ -85,7 +89,7 @@
                         <a href="#about">Ranking</a>
                     </li>
                     <li> <!--class="page-scroll"-->
-                        <a href="index.html">Voltar</a>
+                        <a href="index.html" onclick="FB.logout()">Desconectar</a>
                     </li>
                 </ul>
             </div>
