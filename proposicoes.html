@@ -33,6 +33,40 @@
 
 <body id="page-top" class="index">
 
+	<!--Facebook API -->
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=685131871646050";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+		FB.Event.subscribe('auth.login', function(){
+			window.location.href = 'proposicoes.html';
+		});
+		
+		FB.Event.subscribe('auth.logout', function(){
+			window.location.href = 'index.html';
+		});
+		
+		FB.logout(function(response) {
+			window.location.href = 'index.html';
+			// user is now logged out
+		});
+
+
+		// Load the SDK Asynchronously
+		(function(d){
+		   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		   if (d.getElementById(id)) {return;}
+		   js = d.createElement('script'); js.id = id; js.async = true;
+		   js.src = "js/all.js";
+		   ref.parentNode.insertBefore(js, ref);
+		 }(document)); 
+		</script>
+
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
@@ -41,7 +75,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Proposições - Itu</a>
+                <a class="navbar-brand"> <!-- href="#page-top" --><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="window.location = '/proposicoes.html'" onlogout="window.location = '/index.html'"></div><!--Proposições - Itu--></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,8 +90,8 @@
                     <li class="page-scroll">
                         <a href="#about">Ranking</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#contact">Sair</a> -->
+                    <li> <!--class="page-scroll">-->
+                        <a href="index.html">Voltar</a>
                     </li>
                 </ul>
             </div>
@@ -492,9 +526,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17359" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -535,9 +572,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17355" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -578,9 +618,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17354" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -623,9 +666,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17353" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -666,9 +712,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17341" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -709,9 +758,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17340" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -753,9 +805,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17247" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -797,9 +852,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17246" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>
@@ -841,9 +899,12 @@
                                     </strong>-->
                                 </li>
                             </ul>
-                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> CONCORDO</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> NÃO CONCORDO</b></button></center><br>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button>
+                            <center><button type="button" class="btn btn-default" style="background-color:#008B8B; color:white"><b> A FAVOR</b></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" class="btn btn-default" style="background-color:#656363; color:white"><b> INDECISO</b></button>&nbsp;&nbsp;&nbsp;&nbsp;					
+							<button type="button" class="btn btn-default" style="background-color:#8B0000; color:white"><b> CONTRA</b></button></center><br>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Sair desta Proposição</button><br><br>
+							
+							<center><a href="http://consulta.siscam.com.br/camaraitu/Documentos/Documento/17245" target="_blank"><b><u><h6>Veja a proposição original no site da câmara de Itu</center></a></b></u></h6>
                         </div>
                     </div>
                 </div>

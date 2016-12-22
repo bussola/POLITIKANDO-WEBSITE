@@ -33,6 +33,38 @@
 
 <body id="page-top" class="index">
 
+	<!--Facebook API -->
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=685131871646050";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+		FB.Event.subscribe('auth.login', function(){
+			window.location.href = 'proposicoes.html';
+		});
+		
+		FB.Event.subscribe('auth.logout', function(){
+			window.location.href = 'index.html';
+		});
+		
+		FB.logout(function(response) {
+		// user is now logged out
+		});
+
+		// Load the SDK Asynchronously
+		(function(d){
+		   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		   if (d.getElementById(id)) {return;}
+		   js = d.createElement('script'); js.id = id; js.async = true;
+		   js.src = "js/all.js";
+		   ref.parentNode.insertBefore(js, ref);
+		 }(document));
+		</script>
+		
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
@@ -51,9 +83,16 @@
                 	<div class="navbar-right">
                 		<!-- Botao Login -->
 						<!-- Botao original copiado do politikei: <a id = "botao-login" class="btn btn-success btn-lg" href="" ng-click="home.login_fb()" target="0"> -->
-                		<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()" target="_blank">
-                			<i class="fa fa-facebook-square"></i> ENTRAR<div class="ripple-wrapper"></div>
-                		</a>>
+						<!-- Botao bootstrat -->
+                		<!--<a id = "botao-login" class="btn btn-success btn-lg" href="proposicoes.html" ng-click="home.login_fb()" target="0">
+                			<i class="fb-login-button" ></i> ENTRAR <div class="ripple-wrapper">
+                		</a> -->
+						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="window.location = '/proposicoes.html'" autologoutlink="window.location.href='index.html';"></div>
+					</div>
+						
+						<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">ENTRAR</fb:login-button> -->
+						
+						
                 	<!-- Menu Padrao:
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -81,7 +120,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
-					<!-- <img class="img-responsive" src="img/politica-web3.png" alt="" width=126px>--><br><br><br>
+					<!-- <img class="img-responsive" src="img/politica-web3.png" alt="" width=156px>--><br><br><br>
                     <div class="intro-text">
                         <span class="name"><font color =#2C3E50>ENTENDA O POLITIKANDO</span></font>
                         <hr class="star-primary">
@@ -97,7 +136,7 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" style="background-color:#2C3E50;">
+    <section id="portfolio" style=background-image:url(img/abstract-blue.jpg) > <!-- style="background-color:#2C3E50;"--> 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -107,7 +146,7 @@
             </div>
             <div class="row">
 			<center><span class ="skills"><b><p align="center"><font color="white"><h4>A POLÍTICA AGORA TEM DESIGN ACESSÍVEL<br><br>UTILIZANDO TECNOLOGIA DE PONTA<br><br>100% OPEN SOURCE (CÓDIGO ABERTO)<br><br>DESENVOLVIDO DE FORMA COLABORATIVA</p></font><br><br></h4></center>
-			<center><a href="https://github.com/bussola/django-politikeiWeb/tree/master/politikandoProject" target="_blank"><!--<img class="img-responsive" src="img/github-logo.png" alt="" width=155px></center>-->
+			<center><a href="https://github.com/bussola/POLITIKANDO-WEBSITE" target="_blank"><!--<img class="img-responsive" src="img/github-logo.png" alt="" width=155px></center>-->
 			<center><button class="btn btn-success btn-lg">GITHUB</button></Center>
 			</a>
 			<!--
@@ -174,6 +213,67 @@
             </div> -->
         </div>
     </section>
+	
+	<!-- Contact Section -->
+    <section id="contact" style="padding:60px; background-image:url(img/clean.jpg); background-repeat:no-repeat; background-size:100%;">
+        <!-- <div class="container"> -->
+            <!-- <div class="row"> -->
+                <!--<div class="col-lg-12 text-center">-->
+                    <center><font color = "#2C3E50" size="12"><p style="font-size:80%;">Acompanhe-nos através de nossa página no Facebook!</p></font></center><br><br>
+					<!-- <button class="btn btn-success btn-lg">SEGUIR</button> -->
+					
+					<center><a class="btn btn-success btn-lg" href="https://www.facebook.com/OSdoBrasil/?fref=ts" target="_blank"><i class="fa fa-facebook-square"></i> 
+					  ACESSAR <div class="ripple-wrapper"></div></a>
+					</center>
+					
+                    <!-- <hr class="star-primary"> -->
+                <!--</div>-->
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+                <!-- <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <!-- <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <p><label>Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome:       " id="name" required data-validation-required-message="Digite seu nome.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <p><label>Email</label>
+                                <input type="email" class="form-control" placeholder="Email:       " id="email" required data-validation-required-message="Digite seu endereço de email.">
+                                <p class="help-block text-danger"></p>
+                            </div
+                        </div>>-->
+                        <!-- <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div> -->
+                        <!--<div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <p><label>Mensagem</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensagem:       " id="message" required data-validation-required-message="Por favor entre com sua mensagem."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">ENVIAR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>-->
+            <!--</div>
+        </div> -->
+    </section>
 
     <!-- About Section -->
     <section class="success" id="about" style=background-image:url(img/textao_bg.png)>
@@ -190,7 +290,7 @@
 				acreditamos que a transparência é uma das ferramentas mais poderosas para melhorar o Governo. 
 				E acima de tudo, acreditamos que se as pessoas tiverem as ferramentas certas, com um design amigável e informações claras, todos irão participar mais e cumprir com o seu papel na democracia.<br><br>
 
-				O Polikando-Itu foi inspirado no Politikei-Curitiba, e se trata de um site para ver as proposições na Câmara Municipal, posicionar-se à favor ou contra, 
+				O Polikando-Itu foi inspirado no Politikei-Curitiba, e se trata de um site para ver as proposições na Câmara Municipal, posicionar-se a favor ou contra, 
 				e analisar quais são os vereadores que pensam mais parecido com você. Estamos fazendo este projeto totalmente em código aberto para que ele seja replicado em todas as cidades do Brasil. <br><br>
 
 				Somos apartidários e não temos fins lucrativos, apenas acreditamos no que deveria ser óbvio: que a tecnologia pode ser a melhor amiga da democracia. Vote, utilize, 
@@ -204,61 +304,6 @@
                     <!-- <a href="#" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Download Theme
                     </a> -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2><font color = "#2C3E50" >Fale Conosco</h2></font>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nome</label>
-                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Digite seu nome.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Digite seu endereço de email.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <!-- <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div> -->
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Mensagem</label>
-                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor entre com sua mensagem."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">ENVIAR</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
