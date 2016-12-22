@@ -65,7 +65,12 @@
 		   js.src = "js/all.js";
 		   ref.parentNode.insertBefore(js, ref);
 		 }(document)); 
+		 
+		 
+		 
 		</script>
+		
+		<script> FB.Event.subscribe("auth.logout", function() {window.location = '/index.html'});</script>
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
