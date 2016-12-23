@@ -48,11 +48,11 @@
 		});
 		
 		FB.Event.subscribe('auth.logout', function(){
-			window.location.href = 'index.html';
+			window.location.href = 'http://viniciusbussola.com.br/';
 		});
 		
 		FB.logout(function(response) {
-			window.location.href = 'index.html';
+			window.location.href = 'http://viniciusbussola.com.br/';
 			// user is now logged out
 		});
 
@@ -66,7 +66,7 @@
 		   ref.parentNode.insertBefore(js, ref);
 		 }(document)); 
 		 
-		 FB.Event.subscribe("auth.logout", function() {window.location = '/index.html'});
+		 FB.Event.subscribe("auth.logout", function() {window.location = 'http://viniciusbussola.com.br/'});
 		 
 		</script>
 
@@ -78,7 +78,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand"> <!-- href="#page-top" --><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="window.location = '/proposicoes.html'" onlogout="window.location = '/index.html'"></div><!--Proposições - Itu--></a>
+                <a class="navbar-brand"> <!-- href="#page-top" --><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="window.location = '/proposicoes.html'" onlogout="window.location = 'http://viniciusbussola.com.br/'"></div><!--Proposições - Itu--></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
