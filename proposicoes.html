@@ -66,11 +66,9 @@
 		   ref.parentNode.insertBefore(js, ref);
 		 }(document)); 
 		 
-		 
+		 FB.Event.subscribe("auth.logout", function() {window.location = '/index.html'});
 		 
 		</script>
-		
-		<script> FB.Event.subscribe("auth.logout", function() {window.location = '/index.html'});</script>
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
